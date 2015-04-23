@@ -4,7 +4,7 @@
   "description": "The smallest and simplest JavaScript priority queue",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js test.js"
+    "test": "eslint index.js test.js && tape test.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/mourner/tinyqueue",
   "devDependencies": {
-    "eslint": "^0.19.0"
+    "eslint": "^0.19.0",
+    "tape": "^4.0.0"
   }
 }

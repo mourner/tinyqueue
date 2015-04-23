@@ -30,7 +30,8 @@
 
     "curly": 0,
     "no-underscore-dangle": 0,
-    "no-constant-condition": 0
+    "no-constant-condition": 0,
+    "no-shadow": 0
   },
   "env": {
     "node": true,
