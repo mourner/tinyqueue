@@ -1,0 +1,25 @@
+{
+  "name": "tinyqueue",
+  "version": "1.0.0",
+  "description": "The smallest and simplest JavaScript priority queue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mourner/tinyqueue.git"
+  },
+  "keywords": [
+    "queue",
+    "priority",
+    "binary heap",
+    "data structures"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mourner/tinyqueue/issues"
+  },
+  "homepage": "https://github.com/mourner/tinyqueue"
+}
