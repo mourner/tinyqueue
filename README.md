@@ -33,6 +33,13 @@ while (queue.length) array.push(queue.pop());
 
 Install as an NPM module:
 
-```js
+```bash
 $ npm install tinyqueue
+```
+
+Make a browser build using Browserify:
+
+```bash
+$ npm install -g browserify
+$ browserify index.js -s TinyQueue > tinyqueue.js
 ```
