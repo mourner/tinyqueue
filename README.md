@@ -10,7 +10,13 @@ queue.push(5);
 queue.push(10);
 
 // remove the top item
-var top = queue.pop(); // returns 7
+var top = queue.pop(); // returns 5
+
+// return the top item (without removal)
+top = queue.peek(); // returns 7
+
+// get queue length
+queue.length; // returns 2
 
 // create a priority queue from an existing array (modifies the array)
 queue = new Queue([7, 5, 10]);
@@ -19,6 +25,10 @@ queue = new Queue([7, 5, 10]);
 queue = new Queue([{value: 5}, {value: 7}], function (a, b) {
 	return a.value - b.value;
 });
+
+// turn a queue into a sorted array
+var array = [];
+while (queue.length) array.push(queue.pop());
 ```
 
 Install as an NPM module:

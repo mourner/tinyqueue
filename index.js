@@ -7,7 +7,11 @@ function TinyQueue(data, compare) {
     this.length = this.data.length;
     this.compare = compare || defaultCompare;
 
-    if (data) for (var i = Math.floor(this.length / 2); i >= 0; i--) this._bubbleDown(i);
+    if (data) for (var i = Math.floor(this.length / 2); i >= 0; i--) this._down(i);
+}
+
+function defaultCompare(a, b) {
+    return a < b ? -1 : a > b ? 1 : 0;
 }
 
 TinyQueue.prototype = {
@@ -15,7 +19,7 @@ TinyQueue.prototype = {
     push: function (item) {
         this.data.push(item);
         this.length++;
-        this._bubbleUp(this.length - 1);
+        this._up(this.length - 1);
     },
 
     pop: function () {
@@ -23,23 +27,29 @@ TinyQueue.prototype = {
         this.data[0] = this.data[this.length - 1];
         this.length--;
         this.data.pop();
-        this._bubbleDown(0);
+        this._down(0);
         return top;
     },
 
-    _bubbleUp: function (pos) {
+    peek: function () {
+        return this.data[0];
+    },
+
+    _up: function (pos) {
+        var data = this.data,
+            compare = this.compare;
+
         while (pos > 0) {
             var parent = Math.floor((pos - 1) / 2);
-
-            if (this.compare(this.data[pos], this.data[parent]) < 0) {
-                swap(this.data, parent, pos);
+            if (compare(data[pos], data[parent]) < 0) {
+                swap(data, parent, pos);
                 pos = parent;
 
             } else break;
         }
     },
 
-    _bubbleDown: function (pos) {
+    _down: function (pos) {
         var data = this.data,
             compare = this.compare,
             len = this.length;
@@ -64,8 +74,4 @@ function swap(data, i, j) {
     var tmp = data[i];
     data[i] = data[j];
     data[j] = tmp;
-}
-
-function defaultCompare(a, b) {
-    return a < b ? -1 : a > b ? 1 : 0;
 }

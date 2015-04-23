@@ -16,6 +16,8 @@ test('maintains a priority queue', function (t) {
     var queue = new Queue();
     for (var i = 0; i < data.length; i++) queue.push(data[i]);
 
+    t.equal(queue.peek(), sorted[0]);
+
     var result = [];
     while (queue.length) result.push(queue.pop());
 
