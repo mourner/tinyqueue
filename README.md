@@ -2,7 +2,7 @@ The smallest and simplest binary heap priority queue implementation in JavaScrip
 
 ```js
 // create an empty priority queue
-var queue = new Queue();
+var queue = new TinyQueue();
 
 // add some items
 queue.push(7);
@@ -19,10 +19,10 @@ top = queue.peek(); // returns 7
 queue.length; // returns 2
 
 // create a priority queue from an existing array (modifies the array)
-queue = new Queue([7, 5, 10]);
+queue = new TinyQueue([7, 5, 10]);
 
 // pass a custom item comparator as a second argument
-queue = new Queue([{value: 5}, {value: 7}], function (a, b) {
+queue = new TinyQueue([{value: 5}, {value: 7}], function (a, b) {
 	return a.value - b.value;
 });
 
