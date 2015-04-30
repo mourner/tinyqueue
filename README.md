@@ -1,4 +1,6 @@
-The smallest and simplest binary heap priority queue implementation in JavaScript.
+## tinyqueue
+
+The smallest and simplest binary heap priority queue in JavaScript.
 
 ```js
 // create an empty priority queue
@@ -43,3 +45,6 @@ Make a browser build using Browserify:
 $ npm install -g browserify
 $ browserify index.js -s TinyQueue > tinyqueue.js
 ```
+
+Inspired by [js-priority-queue](https://github.com/adamhooper/js-priority-queue)
+by [Adam Hooper](https://github.com/adamhooper).
