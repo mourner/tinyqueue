@@ -3,6 +3,8 @@
 module.exports = TinyQueue;
 
 function TinyQueue(data, compare) {
+    if (!(this instanceof TinyQueue)) return new TinyQueue(data, compare);
+
     this.data = data || [];
     this.length = this.data.length;
     this.compare = compare || defaultCompare;

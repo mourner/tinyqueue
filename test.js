@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var Queue = require('./index');
+var tinyQueue = require('./index');
 
 var data = [];
 for (var i = 0; i < 100; i++) {
@@ -13,7 +13,7 @@ var sorted = data.slice().sort(function (a, b) {
 });
 
 test('maintains a priority queue', function (t) {
-    var queue = new Queue();
+    var queue = tinyQueue();
     for (var i = 0; i < data.length; i++) queue.push(data[i]);
 
     t.equal(queue.peek(), sorted[0]);
@@ -27,7 +27,7 @@ test('maintains a priority queue', function (t) {
 });
 
 test('accepts data in constructor', function (t) {
-    var queue = new Queue(data.slice());
+    var queue = tinyQueue(data.slice());
 
     var result = [];
     while (queue.length) result.push(queue.pop());
