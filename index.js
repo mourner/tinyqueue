@@ -9,7 +9,9 @@ function TinyQueue(data, compare) {
     this.length = this.data.length;
     this.compare = compare || defaultCompare;
 
-    if (data) for (var i = Math.floor(this.length / 2); i >= 0; i--) this._down(i);
+    if (data) {
+        for (var i = (this.length >> 1); i >= 0; i--) this._down(i);
+    }
 }
 
 function defaultCompare(a, b) {
@@ -38,42 +40,43 @@ TinyQueue.prototype = {
     },
 
     _up: function (pos) {
-        var data = this.data,
-            compare = this.compare;
+        var data = this.data;
+        var compare = this.compare;
+        var item = data[pos];
 
         while (pos > 0) {
-            var parent = Math.floor((pos - 1) / 2);
-            if (compare(data[pos], data[parent]) < 0) {
-                swap(data, parent, pos);
-                pos = parent;
-
-            } else break;
+            var parent = (pos - 1) >> 1;
+            var current = data[parent];
+            if (compare(item, current) >= 0) break;
+            data[pos] = current;
+            pos = parent;
         }
+
+        data[pos] = item;
     },
 
     _down: function (pos) {
-        var data = this.data,
-            compare = this.compare,
-            len = this.length;
+        var data = this.data;
+        var compare = this.compare;
+        var len = this.length;
+        var halfLen = len >> 1;
+        var item = data[pos];
 
-        while (true) {
-            var left = 2 * pos + 1,
-                right = left + 1,
-                min = pos;
+        while (pos < halfLen) {
+            var left = (pos << 1) + 1;
+            var right = left + 1;
+            var best = data[left];
 
-            if (left < len && compare(data[left], data[min]) < 0) min = left;
-            if (right < len && compare(data[right], data[min]) < 0) min = right;
+            if (right < len && compare(data[right], best) < 0) {
+                left = right;
+                best = data[right];
+            }
+            if (compare(best, item) >= 0) break;
 
-            if (min === pos) return;
-
-            swap(data, min, pos);
-            pos = min;
+            data[pos] = best;
+            pos = left;
         }
+
+        data[pos] = item;
     }
 };
-
-function swap(data, i, j) {
-    var tmp = data[i];
-    data[i] = data[j];
-    data[j] = tmp;
-}
