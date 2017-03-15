@@ -4,7 +4,7 @@
   "description": "The smallest and simplest JavaScript priority queue",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js test.js && tape test.js"
+    "test": "eslint index.js test.js bench.js && tape test.js"
   },
   "repository": {
     "type": "git",
