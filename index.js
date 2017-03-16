@@ -28,13 +28,16 @@ TinyQueue.prototype = {
 
     pop: function () {
         if (this.length === 0) return undefined;
+
         var top = this.data[0];
         this.length--;
+
         if (this.length > 0) {
             this.data[0] = this.data[this.length];
             this._down(0);
         }
         this.data.pop();
+
         return top;
     },
 
@@ -61,16 +64,15 @@ TinyQueue.prototype = {
     _down: function (pos) {
         var data = this.data;
         var compare = this.compare;
-        var len = this.length;
-        var halfLen = len >> 1;
+        var halfLength = this.length >> 1;
         var item = data[pos];
 
-        while (pos < halfLen) {
+        while (pos < halfLength) {
             var left = (pos << 1) + 1;
             var right = left + 1;
             var best = data[left];
 
-            if (right < len && compare(data[right], best) < 0) {
+            if (right < this.length && compare(data[right], best) < 0) {
                 left = right;
                 best = data[right];
             }
