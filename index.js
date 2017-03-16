@@ -9,7 +9,7 @@ function TinyQueue(data, compare) {
     this.length = this.data.length;
     this.compare = compare || defaultCompare;
 
-    if (data) {
+    if (this.length > 0) {
         for (var i = (this.length >> 1); i >= 0; i--) this._down(i);
     }
 }

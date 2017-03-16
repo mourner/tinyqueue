@@ -53,3 +53,11 @@ test('handles edge cases with few elements', function (t) {
 
     t.end();
 });
+
+test('handles init with empty array', function (t) {
+    var queue = tinyQueue([]);
+
+    t.same(queue.data, []);
+
+    t.end();
+});
