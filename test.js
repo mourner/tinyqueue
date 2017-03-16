@@ -36,3 +36,20 @@ test('accepts data in constructor', function (t) {
 
     t.end();
 });
+
+test('handles edge cases with few elements', function (t) {
+    var queue = tinyQueue();
+
+    queue.push(2);
+    queue.push(1);
+    queue.pop();
+    queue.pop();
+    queue.pop();
+    queue.push(2);
+    queue.push(1);
+    t.equal(queue.pop(), 1);
+    t.equal(queue.pop(), 2);
+    t.equal(queue.pop(), undefined);
+
+    t.end();
+});

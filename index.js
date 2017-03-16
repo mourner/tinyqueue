@@ -27,11 +27,14 @@ TinyQueue.prototype = {
     },
 
     pop: function () {
+        if (this.length === 0) return undefined;
         var top = this.data[0];
-        this.data[0] = this.data[this.length - 1];
         this.length--;
+        if (this.length > 0) {
+            this.data[0] = this.data[this.length];
+            this._down(0);
+        }
         this.data.pop();
-        this._down(0);
         return top;
     },
 
