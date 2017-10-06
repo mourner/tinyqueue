@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = TinyQueue;
+module.exports.default = TinyQueue;
 
 function TinyQueue(data, compare) {
     if (!(this instanceof TinyQueue)) return new TinyQueue(data, compare);
