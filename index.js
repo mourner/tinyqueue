@@ -11,7 +11,7 @@ function TinyQueue(data, compare) {
     this.compare = compare || defaultCompare;
 
     if (this.length > 0) {
-        for (var i = (this.length >> 1); i >= 0; i--) this._down(i);
+        for (var i = (this.length >> 1) - 1; i >= 0; i--) this._down(i);
     }
 }
 
