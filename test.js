@@ -61,3 +61,15 @@ test('handles init with empty array', function (t) {
 
     t.end();
 });
+
+test('issue 7', function (t) {
+    var q = tinyQueue([], function (a, b) {
+        return a.cost - b.cost;
+    });
+    q.push({cost: 1120});
+    q.push({cost: 819});
+    q.push({cost: 592});
+    q.push({cost: 4930});
+    t.same(q.peek(), {cost: 592});
+    t.end();
+});
