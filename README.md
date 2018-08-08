@@ -33,18 +33,27 @@ var array = [];
 while (queue.length) array.push(queue.pop());
 ```
 
-Install as an NPM module:
+For a faster number-based queue, see [flatqueue](https://github.com/mourner/flatqueue).
 
-```bash
-$ npm install tinyqueue
+### Install
+
+Install using NPM (`npm install tinyqueue`) or Yarn (`yarn add tinyqueue`), then:
+
+```js
+// import as an ES module
+import TinyQueue from 'tinyqueue';
+
+// or require in Node / Browserify
+const TinyQueue = require('tinyqueue');
 ```
 
-Make a browser build using Browserify:
+Or use a browser build directly:
 
-```bash
-$ npm install -g browserify
-$ browserify index.js -s TinyQueue > tinyqueue.js
+```html
+<script src="https://unpkg.com/tinyqueue@2.0.0/tinyqueue.min.js"></script>
 ```
+
+### Thanks
 
 Inspired by [js-priority-queue](https://github.com/adamhooper/js-priority-queue)
 by [Adam Hooper](https://github.com/adamhooper).
