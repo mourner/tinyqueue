@@ -12,6 +12,7 @@
     "test": "tape test.js",
     "bench": "node -r esm bench.js",
     "build": "rollup -c",
+    "watch": "rollup -cw",
     "prepublishOnly": "npm test"
   },
   "files": [
@@ -36,13 +37,13 @@
   },
   "homepage": "https://github.com/mourner/tinyqueue",
   "devDependencies": {
-    "eslint": "^4.8.0",
-    "eslint-config-mourner": "^2.0.1",
-    "esm": "^3.0.8",
+    "eslint": "^5.3.0",
+    "eslint-config-mourner": "^2.0.3",
+    "esm": "^3.0.74",
     "rollup": "^0.64.1",
     "rollup-plugin-buble": "^0.19.2",
     "rollup-plugin-terser": "^1.0.1",
-    "tape": "^4.6.3"
+    "tape": "^4.9.1"
   },
   "eslintConfig": {
     "extends": "mourner",
