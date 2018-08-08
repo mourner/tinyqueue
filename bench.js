@@ -1,5 +1,5 @@
 
-import TinyQueue from './';
+import TinyQueue from './index.js';
 
 const N = 1000000;
 

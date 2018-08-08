@@ -1,6 +1,6 @@
 
-const test = require('tape').test;
-const TinyQueue = require('./');
+import {test} from 'tape';
+import TinyQueue from './index.js';
 
 const data = [];
 for (let i = 0; i < 100; i++) {
