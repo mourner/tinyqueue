@@ -1,22 +1,21 @@
-function defaultCompare(a, b) {
-    return a < b ? -1 : a > b ? 1 : 0;
-}
 
 export default class TinyQueue {
-    constructor(data, compare) {
-        this.data = data || [];
+    constructor(data = [], compare = defaultCompare) {
+        this.data = data;
         this.length = this.data.length;
-        this.compare = compare || defaultCompare;
+        this.compare = compare;
 
         if (this.length > 0) {
             for (let i = (this.length >> 1) - 1; i >= 0; i--) this._down(i);
         }
     }
+
     push(item) {
         this.data.push(item);
         this.length++;
         this._up(this.length - 1);
     }
+
     pop() {
         if (this.length === 0) return undefined;
 
@@ -31,12 +30,13 @@ export default class TinyQueue {
 
         return top;
     }
+
     peek() {
         return this.data[0];
     }
+
     _up(pos) {
-        const data = this.data;
-        const compare = this.compare;
+        const {data, compare} = this;
         const item = data[pos];
 
         while (pos > 0) {
@@ -49,16 +49,16 @@ export default class TinyQueue {
 
         data[pos] = item;
     }
+
     _down(pos) {
-        const data = this.data;
-        const compare = this.compare;
+        const {data, compare} = this;
         const halfLength = this.length >> 1;
         const item = data[pos];
 
         while (pos < halfLength) {
             let left = (pos << 1) + 1;
-            let right = left + 1;
             let best = data[left];
+            const right = left + 1;
 
             if (right < this.length && compare(data[right], best) < 0) {
                 left = right;
@@ -72,4 +72,8 @@ export default class TinyQueue {
 
         data[pos] = item;
     }
+}
+
+function defaultCompare(a, b) {
+    return a < b ? -1 : a > b ? 1 : 0;
 }
