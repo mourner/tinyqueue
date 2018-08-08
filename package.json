@@ -39,9 +39,9 @@
     "eslint": "^4.8.0",
     "eslint-config-mourner": "^2.0.1",
     "esm": "^3.0.8",
-    "rollup": "^0.57.1",
+    "rollup": "^0.64.1",
     "rollup-plugin-buble": "^0.19.2",
-    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-terser": "^1.0.1",
     "tape": "^4.6.3"
   },
   "eslintConfig": {

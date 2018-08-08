@@ -1,4 +1,4 @@
-import uglify from 'rollup-plugin-uglify';
+import {terser} from 'rollup-plugin-terser';
 import buble from 'rollup-plugin-buble';
 
 const config = (file, plugins) => ({
@@ -13,5 +13,5 @@ const config = (file, plugins) => ({
 
 export default [
     config('tinyqueue.js', [buble()]),
-    config('tinyqueue.min.js', [uglify(), buble()])
+    config('tinyqueue.min.js', [buble(), terser()])
 ];
