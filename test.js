@@ -1,24 +1,23 @@
-'use strict';
 
-var test = require('tape');
-var tinyQueue = require('./index');
+const test = require('tape').test;
+const TinyQueue = require('./');
 
-var data = [];
-for (var i = 0; i < 100; i++) {
+const data = [];
+for (let i = 0; i < 100; i++) {
     data.push(Math.floor(100 * Math.random()));
 }
 
-var sorted = data.slice().sort(function (a, b) {
+const sorted = data.slice().sort(function (a, b) {
     return a - b;
 });
 
 test('maintains a priority queue', function (t) {
-    var queue = tinyQueue();
-    for (var i = 0; i < data.length; i++) queue.push(data[i]);
+    const queue = new TinyQueue();
+    for (let i = 0; i < data.length; i++) queue.push(data[i]);
 
     t.equal(queue.peek(), sorted[0]);
 
-    var result = [];
+    const result = [];
     while (queue.length) result.push(queue.pop());
 
     t.same(result, sorted);
@@ -27,9 +26,9 @@ test('maintains a priority queue', function (t) {
 });
 
 test('accepts data in constructor', function (t) {
-    var queue = tinyQueue(data.slice());
+    const queue = new TinyQueue(data.slice());
 
-    var result = [];
+    const result = [];
     while (queue.length) result.push(queue.pop());
 
     t.same(result, sorted);
@@ -38,7 +37,7 @@ test('accepts data in constructor', function (t) {
 });
 
 test('handles edge cases with few elements', function (t) {
-    var queue = tinyQueue();
+    const queue = new TinyQueue();
 
     queue.push(2);
     queue.push(1);
@@ -55,7 +54,7 @@ test('handles edge cases with few elements', function (t) {
 });
 
 test('handles init with empty array', function (t) {
-    var queue = tinyQueue([]);
+    const queue = new TinyQueue([]);
 
     t.same(queue.data, []);
 
