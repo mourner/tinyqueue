@@ -60,3 +60,16 @@ test('handles init with empty array', function (t) {
 
     t.end();
 });
+
+test('issue #11', function (t) {
+    const q = new TinyQueue();
+    q.push(0);
+    t.equal(q.pop(), 0);
+    q.push(2);
+    q.push(5);
+    t.equal(q.pop(), 2);
+    q.push(4);
+    t.equal(q.pop(), 4);
+    t.equal(q.pop(), 5);
+    t.end();
+});
