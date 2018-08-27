@@ -21,12 +21,12 @@ export default class TinyQueue {
 
         const top = this.data[0];
         const bottom = this.data.pop();
+        this.length--;
 
-        if (this.length > 1) {
+        if (this.length > 0) {
             this.data[0] = bottom;
             this._down(0);
         }
-        this.length--;
 
         return top;
     }
