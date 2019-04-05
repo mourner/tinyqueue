@@ -12,10 +12,10 @@ function compare(a, b) {
     return a.value - b.value;
 }
 
-console.time('push ' + N);
+console.time(`push ${N}`);
 for (let i = 0; i < 1000000; i++) q.push(data[i]);
-console.timeEnd('push ' + N);
+console.timeEnd(`push ${N}`);
 
-console.time('pop ' + N);
+console.time(`pop ${N}`);
 for (let i = 0; i < 1000000; i++) q.pop();
-console.timeEnd('pop ' + N);
+console.timeEnd(`pop ${N}`);

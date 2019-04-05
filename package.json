@@ -39,22 +39,15 @@
   },
   "homepage": "https://github.com/mourner/tinyqueue",
   "devDependencies": {
-    "eslint": "^5.3.0",
-    "eslint-config-mourner": "^2.0.3",
-    "esm": "^3.0.74",
-    "rollup": "^0.64.1",
-    "rollup-plugin-buble": "^0.19.2",
-    "rollup-plugin-terser": "^1.0.1",
-    "tape": "^4.9.1"
+    "eslint": "^5.16.0",
+    "eslint-config-mourner": "^3.0.0",
+    "esm": "^3.2.22",
+    "rollup": "^1.9.0",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-terser": "^4.0.4",
+    "tape": "^4.10.1"
   },
   "eslintConfig": {
-    "extends": "mourner",
-    "parserOptions": {
-      "sourceType": "module"
-    },
-    "rules": {
-      "no-var": "error",
-      "prefer-const": "error"
-    }
+    "extends": "mourner"
   }
 }

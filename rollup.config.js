@@ -6,6 +6,7 @@ const config = (file, plugins) => ({
     output: {
         name: 'TinyQueue',
         format: 'umd',
+        indent: false,
         file
     },
     plugins
