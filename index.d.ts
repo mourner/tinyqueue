@@ -7,5 +7,5 @@ export default class TinyQueue<Item> {
   constructor (items? : Item[], compare? : Comparator<Item>);
   peek () : Item;
   pop () : Item;
-  push (Item) : void;
+  push (item: Item) : void;
 }
