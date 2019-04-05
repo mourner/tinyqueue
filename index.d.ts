@@ -1,5 +1,5 @@
 export declare type Item = any;
-export declare type Comparator<Item> = (a: Item, b: Item) => -1 | 0 | 1;
+export declare type Comparator<Item> = (a: Item, b: Item) => number;
 
 export default class TinyQueue<Item> {
   public data : Item[];
