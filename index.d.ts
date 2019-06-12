@@ -5,7 +5,7 @@ export default class TinyQueue<Item> {
   public data : Item[];
   public length : number;
   constructor (items? : Item[], compare? : Comparator<Item>);
-  peek () : Item;
-  pop () : Item;
+  peek () : Item | undefined;
+  pop () : Item | undefined;
   push (item: Item) : void;
 }
