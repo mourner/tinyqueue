@@ -41,11 +41,11 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-mourner": "^3.0.0",
-    "esm": "^3.2.22",
-    "rollup": "^1.9.0",
+    "esm": "^3.2.25",
+    "rollup": "^1.15.4",
     "rollup-plugin-buble": "^0.19.6",
-    "rollup-plugin-terser": "^4.0.4",
-    "tape": "^4.10.1"
+    "rollup-plugin-terser": "^5.0.0",
+    "tape": "^4.10.2"
   },
   "eslintConfig": {
     "extends": "mourner"
