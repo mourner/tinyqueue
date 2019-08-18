@@ -6,7 +6,7 @@ const N = 1000000;
 const data = [];
 for (let i = 0; i < N; i++) data[i] = {value: Math.random()};
 
-const q = new TinyQueue(null, compare);
+const q = new TinyQueue([], compare);
 
 function compare(a, b) {
     return a.value - b.value;
