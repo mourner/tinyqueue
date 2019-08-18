@@ -1,11 +1,10 @@
-export declare type Item = any;
-export declare type Comparator<Item> = (a: Item, b: Item) => number;
+export declare type Comparator<T> = (a: T, b: T) => number;
 
-export default class TinyQueue<Item> {
-  public data : Item[];
+export default class TinyQueue<T> {
+  public data : T[];
   public length : number;
-  constructor (items? : Item[], compare? : Comparator<Item>);
-  peek () : Item | undefined;
-  pop () : Item | undefined;
-  push (item: Item) : void;
+  constructor (items? : T[], compare? : Comparator<T>);
+  peek () : T | undefined;
+  pop () : T | undefined;
+  push (item: T) : void;
 }
