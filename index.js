@@ -54,18 +54,16 @@ export default class TinyQueue {
         const item = data[pos];
 
         while (pos < halfLength) {
-            let left = (pos << 1) + 1;
-            let best = data[left];
-            const right = left + 1;
+            let bestChild = (pos << 1) + 1; // initially it is the left child
+            const right = bestChild + 1;
 
-            if (right < this.length && compare(data[right], best) < 0) {
-                left = right;
-                best = data[right];
+            if (right < this.length && compare(data[right], data[bestChild]) < 0) {
+                bestChild = right;
             }
-            if (compare(best, item) >= 0) break;
+            if (compare(data[bestChild], item) >= 0) break;
 
-            data[pos] = best;
-            pos = left;
+            data[pos] = data[bestChild];
+            pos = bestChild;
         }
 
         data[pos] = item;
