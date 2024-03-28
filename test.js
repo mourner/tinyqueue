@@ -58,3 +58,23 @@ test('handles init with empty array', (t) => {
 
     t.end();
 });
+
+test('updates few elements', (t) => {
+    const queue = new TinyQueue();
+    queue.push(1);
+    queue.push(2);
+    queue.push(3);
+    queue.push(1);
+
+    let res = queue.update(4, (val) => { return val == 1 });
+    t.equal(res, true);
+    t.equal(queue.length, 4);
+    t.equal(queue.peek(), 1);
+
+    res = queue.update(4, (val) => { return val == 1 });
+    t.equal(res, true);
+    t.equal(queue.length, 4);
+    t.equal(queue.peek(), 2);
+
+    t.end();
+});
