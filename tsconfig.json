@@ -4,7 +4,6 @@
     "module": "NodeNext",
     "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "declaration": true
   },
   "include": ["*.ts"]

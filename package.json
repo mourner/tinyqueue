@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint index.ts test.js bench.js",
     "pretest": "npm run lint",
-    "test": "npm run build && tape -r esm test.js",
+    "test": "npm run build && tape test.js",
     "bench": "node bench.js",
     "build": "tsc",
     "watch": "tsc -w",
