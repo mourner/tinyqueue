@@ -47,12 +47,6 @@ import TinyQueue from 'tinyqueue';
 const TinyQueue = require('tinyqueue');
 ```
 
-Or use a browser build directly:
-
-```html
-<script src="https://unpkg.com/tinyqueue@2.0.0/tinyqueue.min.js"></script>
-```
-
 ### Thanks
 
 Inspired by [js-priority-queue](https://github.com/adamhooper/js-priority-queue)
