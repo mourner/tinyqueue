@@ -2,24 +2,18 @@
   "name": "tinyqueue",
   "version": "2.0.3",
   "description": "The smallest and simplest JavaScript priority queue",
-  "main": "tinyqueue.js",
+  "type": "module",
+  "main": "index.js",
   "module": "index.js",
-  "jsdelivr": "tinyqueue.min.js",
-  "unpkg": "tinyqueue.min.js",
   "types": "index.d.ts",
   "scripts": {
-    "lint": "eslint index.js test.js bench.js rollup.config.js",
+    "lint": "eslint *.js",
     "pretest": "npm run lint",
-    "test": "tape -r esm test.js",
-    "bench": "node -r esm bench.js",
-    "build": "rollup -c",
-    "watch": "rollup -cw",
+    "test": "node --test",
+    "bench": "node bench.js",
     "prepublishOnly": "npm test"
   },
   "files": [
-    "index.js",
-    "tinyqueue.js",
-    "tinyqueue.min.js",
     "index.d.ts"
   ],
   "repository": {
@@ -39,15 +33,7 @@
   },
   "homepage": "https://github.com/mourner/tinyqueue",
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-mourner": "^3.0.0",
-    "esm": "^3.2.25",
-    "rollup": "^1.15.4",
-    "rollup-plugin-buble": "^0.19.6",
-    "rollup-plugin-terser": "^5.0.0",
-    "tape": "^4.10.2"
-  },
-  "eslintConfig": {
-    "extends": "mourner"
+    "eslint": "^9.6.0",
+    "eslint-config-mourner": "^4.0.1"
   }
 }

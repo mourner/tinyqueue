@@ -1,6 +1,6 @@
 
 export default class TinyQueue {
-    constructor(data = [], compare = defaultCompare) {
+    constructor(data = [], compare = (a, b) => (a < b ? -1 : a > b ? 1 : 0)) {
         this.data = data;
         this.length = this.data.length;
         this.compare = compare;
@@ -68,8 +68,4 @@ export default class TinyQueue {
 
         data[pos] = item;
     }
-}
-
-function defaultCompare(a, b) {
-    return a < b ? -1 : a > b ? 1 : 0;
 }
