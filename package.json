@@ -1,6 +1,6 @@
 {
   "name": "tinyqueue",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "The smallest and simplest JavaScript priority queue",
   "type": "module",
   "main": "index.js",
