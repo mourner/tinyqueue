@@ -4,7 +4,7 @@ The smallest and simplest binary heap priority queue in JavaScript.
 
 ```js
 // create an empty priority queue
-var queue = new TinyQueue();
+let queue = new TinyQueue();
 
 // add some items
 queue.push(7);
@@ -12,7 +12,7 @@ queue.push(5);
 queue.push(10);
 
 // remove the top item
-var top = queue.pop(); // returns 5
+let top = queue.pop(); // returns 5
 
 // return the top item (without removal)
 top = queue.peek(); // returns 7
@@ -29,7 +29,7 @@ queue = new TinyQueue([{value: 5}, {value: 7}], function (a, b) {
 });
 
 // turn a queue into a sorted array
-var array = [];
+const array = [];
 while (queue.length) array.push(queue.pop());
 ```
 
@@ -37,20 +37,17 @@ For a faster number-based queue, see [flatqueue](https://github.com/mourner/flat
 
 ### Install
 
-Install using NPM (`npm install tinyqueue`) or Yarn (`yarn add tinyqueue`), then:
+Install using NPM (`npm install tinyqueue`), then import as a module:
 
 ```js
-// import as an ES module
 import TinyQueue from 'tinyqueue';
-
-// or require in Node / Browserify
-const TinyQueue = require('tinyqueue');
 ```
 
-Or use a browser build directly:
+Or use a browser build from a CDN:
 
 ```html
-<script src="https://unpkg.com/tinyqueue@2.0.0/tinyqueue.min.js"></script>
+<script type="module">
+	import TinyQueue from 'https://cdn.jsdelivr.net/npm/tinyqueue/+esm';
 ```
 
 ### Thanks
