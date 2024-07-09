@@ -33,6 +33,26 @@ export default class TinyQueue {
         return this.data[0];
     }
 
+    update(newValue, criteria) {
+        let pos = this.data.findIndex(function(value, index, array) {
+            return criteria(value);
+        });
+        if (pos >= 0) {
+            this.data[pos] = newValue;
+            let childPos = (pos << 1) + 1;
+            if (pos == 0)
+                this._down(pos);
+            else if (childPos >= this.length)
+                this._up(pos);
+            else if (this.compare(newValue, this.data[childPos]) < 0)
+                this._up(pos);
+            else if (this.compare(newValue, this.data[childPos]) > 0)
+                this._down(pos);
+            return true;
+        }
+        return false;
+    }
+
     _up(pos) {
         const {data, compare} = this;
         const item = data[pos];
