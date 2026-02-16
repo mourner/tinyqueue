@@ -3,18 +3,25 @@
   "version": "3.0.0",
   "description": "The smallest and simplest JavaScript priority queue",
   "type": "module",
-  "main": "index.js",
+  "main": "./index.cjs",
   "module": "index.js",
   "types": "index.d.ts",
+  "exports": {
+    "types": "./index.d.ts",
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
   "scripts": {
-    "lint": "eslint *.js",
+    "lint": "eslint *.js *.cjs",
     "pretest": "npm run lint",
     "test": "node --test",
     "bench": "node bench.js",
     "prepublishOnly": "npm test"
   },
   "files": [
-    "index.d.ts"
+    "index.d.ts",
+    "index.cjs",
+    "index.js"
   ],
   "repository": {
     "type": "git",

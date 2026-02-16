@@ -43,6 +43,12 @@ Install using NPM (`npm install tinyqueue`), then import as a module:
 import TinyQueue from 'tinyqueue';
 ```
 
+Or use CommonJS `require`:
+
+```js
+const TinyQueue = require('tinyqueue');
+```
+
 Or use a browser build from a CDN:
 
 ```html

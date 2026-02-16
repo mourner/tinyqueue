@@ -1,6 +1,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
 
 import TinyQueue from './index.js';
 
@@ -51,4 +52,13 @@ test('handles init with empty array', () => {
     const queue = new TinyQueue([]);
 
     assert.deepEqual(queue.data, []);
+});
+
+test('CJS require works', () => {
+    const require_ = createRequire(import.meta.url);
+    const Queue = require_('./');
+    const queue = new Queue([3, 1, 2]);
+    assert.equal(queue.pop(), 1);
+    assert.equal(queue.pop(), 2);
+    assert.equal(queue.pop(), 3);
 });
