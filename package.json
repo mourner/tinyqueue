@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/mourner/tinyqueue",
   "devDependencies": {
-    "eslint": "^9.6.0",
-    "eslint-config-mourner": "^4.0.1"
+    "eslint": "^10.2.0",
+    "eslint-config-mourner": "^4.1.0"
   }
 }
